@@ -9,6 +9,7 @@ import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.view.*
 
 class MainActivity : AppCompatActivity() {
+    // set the starting value to 0
     private var points = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         pickRandomNumbers()
     }
 
+    //function for the left button
     fun leftButtonClick(view: View){
 
         val leftButton = findViewById<Button>(R.id.leftbutton)
@@ -23,8 +25,10 @@ class MainActivity : AppCompatActivity() {
         val leftNum= leftButton.text.toString().toInt()
         val rightNum = rightButton.text.toString().toInt()
         if(leftNum > rightNum){
+            //correct
             points++
         } else {
+            //wrong
             points--
         }
         findViewById<TextView>(R.id.points).text = "Points: $points"
@@ -32,6 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    //function for the right button
     fun rightButtonClick(view: View){
         val leftButton = findViewById<Button>(R.id.leftbutton)
         val rightButton = findViewById<Button>(R.id.rightbutton)
@@ -48,6 +53,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    
     fun pickRandomNumbers(){
 
             val leftButton = findViewById<Button>(R.id.leftbutton)
