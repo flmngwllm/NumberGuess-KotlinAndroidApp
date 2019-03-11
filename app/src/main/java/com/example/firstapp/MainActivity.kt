@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.view.*
 
 class MainActivity : AppCompatActivity() {
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun checkIfCorrectAnswer(isLeft: Boolean){
+    private fun checkIfCorrectAnswer(isLeft: Boolean){
         val leftButton = findViewById<Button>(R.id.leftbutton)
         val rightButton = findViewById<Button>(R.id.rightbutton)
         val leftNum= leftButton.text.toString().toInt()
@@ -39,9 +40,13 @@ class MainActivity : AppCompatActivity() {
         if(isLeft && leftNum > rightNum || !isLeft && leftNum < rightNum){
             //correct
             points++
+            Toast.makeText(this, "Right", Toast.LENGTH_SHORT).show()
+
         } else {
             //wrong
             points--
+            Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show()
+
         }
         findViewById<TextView>(R.id.points).text = "Points: $points"
         pickRandomNumbers()
