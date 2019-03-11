@@ -28,9 +28,22 @@ class MainActivity : AppCompatActivity() {
             points--
         }
         findViewById<TextView>(R.id.points).text = "Points: $points"
+        pickRandomNumbers()
+
     }
 
     fun rightButtonClick(view: View){
+        val leftButton = findViewById<Button>(R.id.leftbutton)
+        val rightButton = findViewById<Button>(R.id.rightbutton)
+        val leftNum= leftButton.toString().toInt()
+        val rightNum = rightButton.toString().toInt()
+        if(leftNum < rightNum){
+            points--
+        } else {
+            points++
+        }
+        findViewById<TextView>(R.id.points).text = "Points: $points"
+        pickRandomNumbers()
 
     }
 
