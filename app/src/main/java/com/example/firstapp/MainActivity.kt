@@ -43,9 +43,9 @@ class MainActivity : AppCompatActivity() {
         val leftNum= leftButton.text.toString().toInt()
         val rightNum = rightButton.text.toString().toInt()
         if(leftNum < rightNum){
-            points--
-        } else {
             points++
+        } else {
+            points--
         }
         findViewById<TextView>(R.id.points).text = "Points: $points"
         pickRandomNumbers()
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    
+    //function to start the buttons with random numbers
     fun pickRandomNumbers(){
 
             val leftButton = findViewById<Button>(R.id.leftbutton)
