@@ -11,20 +11,32 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        pickRandomNumbers()
     }
 
     fun leftButtonClick(view: View){
+
         val leftButton = findViewById<Button>(R.id.leftbutton)
         val rightButton = findViewById<Button>(R.id.rightbutton)
-        val r = Random()
-        val num1 = r.nextInt(10)
-        leftButton.text = "$num1"
-
-        val num2 = r.nextInt(10)
-        rightButton.text = "$num2"
+        val leftNum= leftButton.toString().toInt()
+        val rightNum = rightButton.toString().toInt()
+        
     }
 
     fun rightButtonClick(view: View){
 
+    }
+
+
+    fun pickRandomNumbers(){
+
+            val leftButton = findViewById<Button>(R.id.leftbutton)
+            val rightButton = findViewById<Button>(R.id.rightbutton)
+            val r = Random()
+            val num1 = r.nextInt(10)
+            leftButton.text = "$num1"
+
+            val num2 = r.nextInt(10)
+            rightButton.text = "$num2"
     }
 }
