@@ -5,9 +5,11 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_main.view.*
 
 class MainActivity : AppCompatActivity() {
-
+    private var points = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,7 +22,12 @@ class MainActivity : AppCompatActivity() {
         val rightButton = findViewById<Button>(R.id.rightbutton)
         val leftNum= leftButton.toString().toInt()
         val rightNum = rightButton.toString().toInt()
-        
+        if(leftNum > rightNum){
+            points++
+        } else {
+            points--
+        }
+        findViewById<TextView>(R.id.points).text = "Points: $points"
     }
 
     fun rightButtonClick(view: View){
