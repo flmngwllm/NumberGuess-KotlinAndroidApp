@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity() {
 
         val leftButton = findViewById<Button>(R.id.leftbutton)
         val rightButton = findViewById<Button>(R.id.rightbutton)
-        val leftNum= leftButton.toString().toInt()
-        val rightNum = rightButton.toString().toInt()
+        val leftNum= leftButton.text.toString().toInt()
+        val rightNum = rightButton.text.toString().toInt()
         if(leftNum > rightNum){
             points++
         } else {
@@ -35,8 +35,8 @@ class MainActivity : AppCompatActivity() {
     fun rightButtonClick(view: View){
         val leftButton = findViewById<Button>(R.id.leftbutton)
         val rightButton = findViewById<Button>(R.id.rightbutton)
-        val leftNum= leftButton.toString().toInt()
-        val rightNum = rightButton.toString().toInt()
+        val leftNum= leftButton.text.toString().toInt()
+        val rightNum = rightButton.text.toString().toInt()
         if(leftNum < rightNum){
             points--
         } else {
